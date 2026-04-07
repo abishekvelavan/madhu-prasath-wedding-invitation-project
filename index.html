@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madhu Prasath & Shobana - Wedding Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Nunito:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <audio id="bgm" loop>
+        <source src="assets/bg_music.webm" type="audio/webm">
+    </audio>
+    <canvas id="webgl-canvas"></canvas>
+
+    <div id="scroll-wrapper">
+        <div id="ui-container">
+
+            <div class="ui-layer" id="scene-intro">
+                <div class="scene-emoji">🪷</div>
+                <p class="cute-subtitle" style="font-size:1.1rem; opacity:0.8; margin-bottom:5px;">Sri Murugan Thunai
+                </p>
+                <h1 class="cute-title">Madhu Prasath & Shobana</h1>
+                <div class="indian-divider"></div>
+                <p class="cute-subtitle" id="subtitle-text">✨ Shubh Vivah ✨</p>
+                <p class="cute-subtitle" style="font-size:1.2rem; margin-top:25px; opacity:0.7;">Scroll down to explore
+                    ↓</p>
+            </div>
+
+            <div class="ui-layer" id="scene-story" style="opacity: 0; display: none;">
+                <div class="scene-emoji">🪔</div>
+                <h2 class="cute-title" style="font-size: 3.5rem;">With hearts full of love & joy</h2>
+                <div class="indian-divider"></div>
+                <p class="cute-subtitle" style="font-size:1.4rem; text-align:center;">We invite you to the <br />
+                    beautiful beginning of our forever 💕</p>
+            </div>
+
+            <div class="ui-layer" id="scene-family" style="opacity: 0; display: none;">
+                <div class="scene-emoji">🙏</div>
+                <h2 class="cute-title" style="font-size: 3.5rem;">With Joyful Blessings</h2>
+                <div class="indian-divider"></div>
+            </div>
+
+            <div class="ui-layer" id="scene-details" style="opacity: 0; display: none;">
+                <div class="events-container">
+                    <div class="cute-card">
+                        <h2>🕉️ Muhurtham</h2>
+                        <p class="cute-date">Thursday, April 30th, 2026</p>
+                        <p class="cute-time">4:00 AM - 5:30 AM</p>
+                    </div>
+                    <div class="cute-card">
+                        <h2>🎉 Reception</h2>
+                        <p class="cute-date">Wednesday, April 29th, 2026</p>
+                        <p class="cute-time">6:30 PM Onwards</p>
+                    </div>
+                </div>
+                <div id="caricature"
+                    style="width: 250px; height: 250px; background: url('assets/caricature.png') center/contain no-repeat; margin-top: 25px; filter: drop-shadow(0 10px 15px rgba(212,20,90,0.2)); border-radius: 50%; border: 4px solid #ff9933;">
+                </div>
+                <a href="https://www.google.com/maps/search/Dhanalakshmi+Mahal+Arakkonam+Road+Valliyammapuram+Tiruttani"
+                    target="_blank" rel="noopener noreferrer" class="cute-button map-button">
+                    📍 Dhanalakshmi Mahal, Arakkonam Road, Valliyammapuram, Tiruttani
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script type="module" src="script.js?v=17"></script>
+</body>
+
+</html>
