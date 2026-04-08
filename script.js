@@ -3,23 +3,53 @@ import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 
+// Seamless background music – robust fallback for browser autoplay policies
+const bgm = document.getElementById('bgm');
+let audioStarted = false;
+
+function initAudio() {
+    if (audioStarted) return;
+
+    // Set to 10 seconds if metadata is loaded, or wait for it
+    if (bgm.readyState >= 1) {
+        if (bgm.currentTime < 10) bgm.currentTime = 10;
+    } else {
+        bgm.addEventListener('loadedmetadata', () => {
+            bgm.currentTime = 10;
+        }, { once: true });
+    }
+
+    const playPromise = bgm.play();
+    if (playPromise !== undefined) {
+        playPromise.then(() => {
+            audioStarted = true;
+            ['click', 'touchstart', 'scroll', 'keydown', 'wheel'].forEach(evt => {
+                window.removeEventListener(evt, initAudio, { capture: true });
+            });
+        }).catch(err => {
+            console.log("Audio play requires user interaction:", err);
+        });
+    }
+}
+
+// Bind to all possible interactions to seamlessly unlock audio
+['click', 'touchstart', 'scroll', 'keydown', 'wheel'].forEach(evt => {
+    window.addEventListener(evt, initAudio, { capture: true, passive: true });
+});
+
+// Try to autoplay immediately (will likely be blocked until gesture)
+initAudio();
+
+// Custom loop: 10s to 45s
+bgm.addEventListener('timeupdate', () => {
+    if (bgm.currentTime >= 45) {
+        bgm.currentTime = 10;
+        bgm.play().catch(e => console.log('Loop play blocked:', e));
+    }
+});
+
 let scrollY = 0;
 let targetScrollY = 0;
-
-// Autoplay music from 0:10 on page load
-const bgm = document.getElementById('bgm');
-bgm.currentTime = 10;
-bgm.play().catch(() => {
-    // Browser blocked autoplay, play on first user interaction
-    const playOnce = () => {
-        bgm.currentTime = 10;
-        bgm.play();
-        document.removeEventListener('click', playOnce);
-        document.removeEventListener('scroll', playOnce);
-    };
-    document.addEventListener('click', playOnce, { once: true });
-    document.addEventListener('scroll', playOnce, { once: true });
-});
 
 window.addEventListener('scroll', () => { targetScrollY = window.scrollY; });
 function lerp(a, b, t) { return a + (b - a) * t; }

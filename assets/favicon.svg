@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Soft Saffron background circle -->
+  <circle cx="50" cy="50" r="48" fill="#fff5eb" stroke="#ff9933" stroke-width="4"/>
+  <!-- Deep Rose Heart -->
+  <path d="M50 82 C10 47, 5 22, 25 12 C38 6, 50 20, 50 20 C50 20, 62 6, 75 12 C95 22, 90 47, 50 82 Z" fill="#d4145a"/>
+  <!-- M&S Monogram -->
+  <text x="50" y="53" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">M&amp;S</text>
+</svg>

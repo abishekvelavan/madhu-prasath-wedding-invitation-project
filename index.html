@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Madhu Prasath & Shobana - Wedding Invitation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Nunito:wght@400;700&display=swap"
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
@@ -20,8 +24,8 @@
 </head>
 
 <body>
-    <audio id="bgm" loop>
-        <source src="assets/bg_music.webm" type="audio/webm">
+    <audio id="bgm">
+        <source src="https://shobanawedsmadhu.netlify.app/assets/bg_music.webm" type="audio/webm">
     </audio>
     <canvas id="webgl-canvas"></canvas>
 
@@ -29,17 +33,23 @@
         <div id="ui-container">
 
             <div class="ui-layer" id="scene-intro">
-                <div class="scene-emoji">🪷</div>
+                <div class="side-by-side-images" style="margin-bottom: 20px;">
+                    <img src="assets/bride.png" alt="Bride" class="profile-img">
+                    <img src="assets/groom.png" alt="Groom" class="profile-img">
+                </div>
+                <!-- <div class="scene-emoji">🪷</div> -->
                 <p class="cute-subtitle" style="font-size:1.1rem; opacity:0.8; margin-bottom:5px;">Sri Murugan Thunai
                 </p>
                 <h1 class="cute-title">Madhu Prasath & Shobana</h1>
                 <div class="indian-divider"></div>
-                <p class="cute-subtitle" id="subtitle-text">✨ Shubh Vivah ✨</p>
-                <p class="cute-subtitle" style="font-size:1.2rem; margin-top:25px; opacity:0.7;">Scroll down to explore
+                <p class="cute-subtitle" id="subtitle-text" style="font-family: 'Nunito', sans-serif;">✨ சுப முகூர்த்தம்
+                    ✨</p>
+                <p class="cute-subtitle" style="font-size:1.5rem; margin-top:25px; opacity:0.7;">Scroll down to explore
                     ↓</p>
             </div>
 
             <div class="ui-layer" id="scene-story" style="opacity: 0; display: none;">
+                <img src="assets/couple-with-ring.png" alt="Rings" class="feature-img" style="margin-bottom: 20px;">
                 <div class="scene-emoji">🪔</div>
                 <h2 class="cute-title" style="font-size: 3.5rem;">With hearts full of love & joy</h2>
                 <div class="indian-divider"></div>
@@ -48,6 +58,7 @@
             </div>
 
             <div class="ui-layer" id="scene-family" style="opacity: 0; display: none;">
+                <img src="assets/couple.png" alt="Couple" class="feature-img" style="margin-bottom: 20px;">
                 <div class="scene-emoji">🙏</div>
                 <h2 class="cute-title" style="font-size: 3.5rem;">With Joyful Blessings</h2>
                 <div class="indian-divider"></div>
@@ -71,7 +82,7 @@
                 </div>
                 <a href="https://www.google.com/maps/search/Dhanalakshmi+Mahal+Arakkonam+Road+Valliyammapuram+Tiruttani"
                     target="_blank" rel="noopener noreferrer" class="cute-button map-button">
-                    📍 Dhanalakshmi Mahal, Arakkonam Road, Valliyammapuram, Tiruttani
+                    📍 Dhanalakshmi Mahal, Arakkonam Road, Tiruttani
                 </a>
 
             </div>

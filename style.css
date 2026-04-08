@@ -4,7 +4,7 @@ html {
     padding: 0;
     background-color: #fff5eb;
     /* Warm cream */
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Caveat', cursive;
 }
 
 #webgl-canvas {
@@ -54,8 +54,8 @@ html {
 
 /* ---- CUTE INDIAN TYPOGRAPHY ---- */
 h1.cute-title {
-    font-family: 'Fredoka', sans-serif;
-    font-size: 5rem;
+    font-family: 'Dancing Script', cursive;
+    font-size: 6rem;
     color: #d4145a;
     /* Deep rose */
     text-shadow: 2px 2px 0px #fff, 0 0 30px rgba(212, 20, 90, 0.3);
@@ -64,7 +64,8 @@ h1.cute-title {
 }
 
 h2.cute-title {
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Dancing Script', cursive;
+    font-size: 4.5rem;
     color: #d4145a;
     text-shadow: 2px 2px 0px #fff, 0 0 20px rgba(212, 20, 90, 0.25);
     margin: 0;
@@ -72,7 +73,8 @@ h2.cute-title {
 }
 
 .cute-subtitle {
-    font-size: 2rem;
+    font-family: 'Caveat', cursive;
+    font-size: 2.2rem;
     color: #e8725a;
     font-weight: 700;
     margin-top: 15px;
@@ -116,9 +118,9 @@ h2.cute-title {
 }
 
 .cute-card h2 {
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Dancing Script', cursive;
     color: #d4145a;
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-top: 0;
     margin-bottom: 5px;
 }
@@ -138,9 +140,9 @@ h2.cute-title {
 }
 
 .venue-text {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #4a2c2a;
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Dancing Script', cursive;
     margin-top: 20px;
     background: linear-gradient(135deg, #fff5eb, #ffe0cc);
     padding: 15px 35px;
@@ -150,7 +152,7 @@ h2.cute-title {
 }
 
 .cute-button {
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Caveat', cursive;
     background: linear-gradient(135deg, #ff9933 0%, #d4145a 100%);
     /* Saffron to Rose */
     border: 3px solid #fff;
@@ -248,5 +250,167 @@ a.map-button:hover {
 
     .scene-emoji {
         font-size: 3rem;
+    }
+}
+
+/* ---- ENTRY OVERLAY ---- */
+#entry-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    background: linear-gradient(135deg, #fff5eb 0%, #fce4ec 30%, #f8bbd0 60%, #ffe0b2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#entry-overlay.hidden {
+    opacity: 0;
+    transform: scale(1.1);
+    pointer-events: none;
+}
+
+.entry-content {
+    text-align: center;
+    animation: fadeInUp 1s ease;
+}
+
+.entry-emoji {
+    font-size: 5rem;
+    margin-bottom: 10px;
+    animation: gentle-bob 3s ease-in-out infinite;
+}
+
+.entry-label {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    color: #e8725a;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+}
+
+.entry-names {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 3.5rem;
+    color: #d4145a;
+    text-shadow: 2px 2px 0px #fff, 0 0 30px rgba(212, 20, 90, 0.3);
+    margin: 0 0 30px 0;
+}
+
+#enter-btn {
+    font-family: 'Fredoka', sans-serif;
+    background: linear-gradient(135deg, #ff9933 0%, #d4145a 100%);
+    border: 3px solid #fff;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 18px 50px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(212, 20, 90, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: btn-pulse 2s ease-in-out infinite;
+}
+
+#enter-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 35px rgba(212, 20, 90, 0.5);
+    animation: none;
+}
+
+.entry-hint {
+    font-size: 0.95rem;
+    color: #b0855a;
+    margin-top: 20px;
+    opacity: 0.8;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes btn-pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 10px 25px rgba(212, 20, 90, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 10px 40px rgba(212, 20, 90, 0.6), 0 0 25px rgba(255, 153, 51, 0.3);
+    }
+}
+
+@media (max-width: 768px) {
+    .entry-names {
+        font-size: 2.2rem;
+    }
+
+    #enter-btn {
+        font-size: 1.2rem;
+        padding: 14px 35px;
+    }
+}
+
+/* ---- IMAGE SEQUENCE STYLES ---- */
+.side-by-side-images {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.profile-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+    border: 5px solid #ff9933;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 15px 35px rgba(212, 20, 90, 0.3);
+    pointer-events: auto;
+}
+
+.feature-img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+    border: 5px solid #d4145a;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 15px 40px rgba(212, 20, 90, 0.4);
+    pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+    .side-by-side-images {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .feature-img {
+        width: 250px;
+        height: 250px;
     }
 }
