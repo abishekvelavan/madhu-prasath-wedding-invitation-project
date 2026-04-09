@@ -10,15 +10,6 @@ let audioStarted = false;
 function initAudio() {
     if (audioStarted) return;
 
-    // Set to 10 seconds if metadata is loaded, or wait for it
-    if (bgm.readyState >= 1) {
-        if (bgm.currentTime < 10) bgm.currentTime = 10;
-    } else {
-        bgm.addEventListener('loadedmetadata', () => {
-            bgm.currentTime = 10;
-        }, { once: true });
-    }
-
     const playPromise = bgm.play();
     if (playPromise !== undefined) {
         playPromise.then(() => {
@@ -39,14 +30,6 @@ function initAudio() {
 
 // Try to autoplay immediately (will likely be blocked until gesture)
 initAudio();
-
-// Custom loop: 10s to 45s
-bgm.addEventListener('timeupdate', () => {
-    if (bgm.currentTime >= 45) {
-        bgm.currentTime = 10;
-        bgm.play().catch(e => console.log('Loop play blocked:', e));
-    }
-});
 
 let scrollY = 0;
 let targetScrollY = 0;
